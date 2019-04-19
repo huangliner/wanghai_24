@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			var arr=[2,5,'3','a',[1],3].flat(Infinity);
+			var sum=0;
+			function b(value,index,a){
+				if(value.constructor === Number){
+					sum+=value;
+				};
+			};arr.forEach(b);
+			console.log(sum);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
