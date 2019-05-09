@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css" >
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#odiv{
+				width: 900px;
+				height: 200px;
+				/* border: 1px solid red; */
+				margin: 0 100px;
+			}
+			.box{
+				width: 200px;
+				height: 50px;
+				/* border: 1px solid red; */
+				text-align: center;
+				line-height: 50px;
+				background: springgreen;
+				color: white;
+			}
+			#odiv img{
+				width: 700px;
+				height: 400px;
+				position: absolute;
+				top: 0;
+				left: 300px;
+				/* display: none; */
+				
+			}
+			.img{
+				opacity: 0; 
+			}
+			.box1{
+				width: 200px;
+				height: 50px;
+				/* border: 1px solid red; */
+				text-align: center;
+				line-height: 50px;
+				background: springgreen;
+				color: white;
+				display: none;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="odiv">
+			<div class="box">图片1<img src="img/宝贝主图1.jpg" /></div>
+			<div class="box">图片2<img class="img" src="img/宝贝主图2.jpg" /></div>
+			<div class="box">图片3<img class="img" src="img/宝贝主图3.jpg" /></div>
+			<div class="box">图片4<img class="img" src="img/宝贝主图4.jpg" /></div>
+			<div class="box">图片5<img class="img" src="img/宝贝主图5.jpg" /></div>
+			<div class="box">图片6<img class="img" src="img/宝贝主图1.jpg" /></div>
+			<div class="box">图片7<img class="img" src="img/宝贝主图2.jpg" /></div>
+			<div class="box">图片8<img class="img" src="img/宝贝主图3.jpg" /></div>
+			<div class="box1"><img class="img" src="img/宝贝主图4.jpg" /></div>
+		</div>
+		<script>
+			window.onload=function(){
+				var odiv=document.getElementById('odiv');
+				var box=odiv.getElementsByTagName('div');
+				var img=odiv.getElementsByTagName('img');
+				var i=0;
+				var j=-1;
+				var c=1;
+				
+				var banner=setInterval(function(){
+					
+					box[i++].style.background='red';
+					img[c++].style.opacity=1;
+					box[j++].style.background='springgreen';
+					
+					if(box[i]==box[9]&&img[c]==img[9]){
+						i=0;
+						j=-1;
+						c=1;
+						clearInterval(banner);
+					};
+					
+				},200);
+				
+			}
+		</script>
+	</body>
+</html>
