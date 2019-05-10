@@ -8,7 +8,7 @@
 	</style>
 </head>
 <body>
-	<button>1</button>
+	<button value="1">1</button>
 	<button>2</button>
 	<button>3</button>
 	<button>4</button>
@@ -27,8 +27,9 @@
 		window.onload=function(){
 			var obut=document.getElementsByTagName('button');
 			for(var i=0; i<obut.length; i++){
+				obut[i].index=i;
 				obut[i].onclick=function(){
-					alert((i++)-obut.length+1);
+					alert(this.index+1);
 				};
 			};
 		};
