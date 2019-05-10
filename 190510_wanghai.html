@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<p id="p"></p>
+	<script>
+		window.onload=function(){
+			var op=document.getElementById('p');
+			var mitime=new Date("2019/05/15 00:00:00");
+				//最终时间
+			var ob=setInterval(function(){
+				var nowtime=new Date();
+				var second=parseInt((mitime.getTime()-nowtime.getTime()) / 1000);
+				//用将来时间毫秒减去现在时间毫秒/1000得到的还剩下的秒数
+				//一小时3600秒 =
+				var d=parseInt(second / 3600 / 24);
+				//天数
+				var h=parseInt(second / 3600 % 24);
+				//小时
+				var m=parseInt(second /60 %60);
+				//分钟
+				var s=parseInt(second % 60);
+				//秒
+				d<10?d="0"+d:d;
+				h<10?h="0"+h:h;
+				m<10?m="0"+m:m;
+				s<10?s="0"+s:s;
+				op.innerHTML='剩下'+d+'天'+h+'小时'+m+'分钟'+s+'秒';
+			},1000);
+		};
+	</script>
+	
+</body>
+</html>
