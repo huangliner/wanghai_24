@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				function MoveL(){
+					var MoveLeft=document.getElementById('img1');
+					return function(){
+						var num=42;
+						MoveLeft.onclick=function(){
+							MoveLeft.style.left=(num--)+'%';
+						}
+					}
+				}
+			    var aa=MoveL();
+				aa();
+				function MoveR(){
+					var MoveRight=document.getElementById('img2');
+					return function(){
+						var num=42;
+						MoveRight.onclick=function(){
+							MoveRight.style.right=(num--)+'%';
+						}
+					}
+				}
+				var zz=MoveR();
+				zz();
+			}
+		</script>
+	</head>
+	<body>
+		<img src="img/图层%201.png" id="img1" style="position: absolute;left: 42%;">
+		<img src="img/图层%202.png" id="img2" style="position: absolute;right: 42%;">
+	</body>
+</html>
